@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/Imc-Icon.png' %}">
+  <!--===============================================================================================-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+  <script src="https://use.fontawesome.com/82033f6785.js"></script>
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="{% static 'css/font_awesome.min.css' %}">
+  <!--===============================================================================================-->
+  <script src="{% static 'js/jquery_3.4.1.min.js' %}"></script>
+
+  <style>
+    body {
+      padding: 0px !important;
+      background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .outerLoginDiv {
+      background: #728a9c;
+      min-width: fit-content;
+      border-radius: 5px;
+      max-width: 800px;
+      margin: 10vw auto;
+      width: 50vw;
+      /* max-height: 275px; */
+      box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.16),
+        0 1px 7px 0 rgba(0, 0, 0, 0.12),
+        0 6px 15px rgba(36, 37, 38, 0.08),
+        0 1px 7px 0 rgba(0, 0, 0, 0.16),
+        0 1px 7px 0 rgba(0, 0, 0, 0.12),
+        0 6px 15px rgba(36, 37, 38, 0.08);
+    }
+
+    .innerLoginDiv {
+      padding: 1.5vw;
+      display: flex;
+      min-width: 300px !important;
+    }
+
+    * {
+      color: white;
+    }
+
+    #footer {
+      color: #6aa5e0;
+      position: absolute;
+      right: 48%;
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    #log_btn {
+      background: #5a5a5a;
+      color: white;
+    }
+
+    #log_btn:hover {
+      box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.16), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 6px 15px rgba(36, 37, 38, 0.08);
+      border-color: whitesmoke;
+    }
+
+    .login100-form-btn {
+      float: right;
+      letter-spacing: 0.3vw;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2vw;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.7vw 1.5vw;
+      min-width: 10vw;
+      height: 3vw;
+      background-color: #333f48;
+      border-radius: 0.5vw;
+      border: 0.09vw solid #f2f2f2;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+
+    .login100-form-btn:hover {
+      border: 0px;
+      background-color: #333333;
+    }
+
+    .form-group {
+      margin-bottom: 0px;
+      padding: 0vw 0vw 0.5vw 1.7vw;
+      width: 100%;
+    }
+
+    .form-label {
+      letter-spacing: 0.2vw;
+      font-weight: 600;
+      font-size: 1.41vw;
+      margin-bottom: 1vw;
+    }
+
+    .form-label-span {
+      letter-spacing: 1px;
+      font-weight: 500;
+      font-size: 0.5vw;
+      margin-bottom: 1vw;
+      padding: 0.15vw;
+      background: #a34813;
+      border-radius: 3px;
+    }
+
+    input {
+      height: 2.5vw !important;
+      font-size: 1vw !important;
+    }
+
+    p {
+      margin-bottom: 1vw;
+    }
+
+    .icondiv {
+      margin-right: 1.4vw;
+      text-align: center;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .icondiv>img {
+      border-radius: 0.5vw;
+    }
+
+    .logodivs {
+      margin-top: 1vw;
+      position: relative;
+    }
+
+    .logodivs div:first-child {
+      font-size: 2em;
+      font-weight: 500;
+      letter-spacing: 0.2vw;
+    }
+
+    .logodivs div:first-child>span {
+      font-size: 1.1vw;
+    }
+
+    .logodivs div:last-child {
+      font-size: 1.5vw;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.1vw;
+      line-height: 1vw;
+      width: 12vw;
+      padding: 0 0.3vw;
+    }
+
+    .formdiv::before {
+      content: '';
+      border: 0.1vw solid white;
+      background: white;
+      position: absolute;
+      height: 17vw;
+      border-radius: 3px;
+    }
+
+    .form-group::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .err-msg {
+      color: Red;
+      position: absolute;
+      top: 5%;
+      width: 40vw;
+      left: 30%;
+      padding: 1vw;
+      border-radius: 10px;
+      border: 1px solid red;
+      background: blanchedalmond;
+      font-size: 1vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outerLoginDiv">
+    <div class="innerLoginDiv">
+      <div class="icondiv">
+        <img style="width: 12vw;height: 12vw;" src="{% static 'images/imc_logo.jpg' %}">
+        <div class="logodivs">
+          <div>Test App</div>
+          <div></div>
+        </div>
+      </div>
+      <div class="formdiv" style="width: 100%;">
+        <form name="form1" method="post">{% csrf_token %}
+          <div class="form-group">
+            <label class="form-label" for="username">Username: <span class="form-label-span">(admin)</span></label>
+            <input class="form-control col-sm" type="text" name="username" id=username placeholder="Enter Username">
+            <p></p>
+            <label class="form-label" for="password">Password: <span class="form-label-span">(admin1234)</span></label>
+            <input class="form-control col-sm" type="password" name="password" id=password
+              placeholder="Enter Password.">
+            <p></p>
+            <div style="text-align: center;margin-top: 2vw;">
+              <div id=footer class="fa fa-spinner fa-spin d-none"></div>
+              <button class="login100-form-btn" onclick="add_spin(event)">
+                LOGIN&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    function add_spin(e) {
+      $('#footer').removeClass('d-none')
+      $("log_btn").prop('disabled', true);
+    }
+  </script>
+
+  {% if invalid == 1 %}
+  <script type="text/javascript">
+    $('div.form-group').prepend(
+      '<p class="err-msg" style="color:Red;">Please enter the correct username and password. Note that both fields may be case-sensitive.</p>'
+    )
+    $('#username').addClass('is-invalid');
+    $('#password').addClass('is-invalid');
+  </script>
+  {% endif %}
+</body>
+
+</html>
+
+
+
+

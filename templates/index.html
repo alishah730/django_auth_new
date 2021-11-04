@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Smart Report">
+
+  <title>Smart Report</title>
+  {% load static %}
+  <!-- CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- CSS Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- CSS Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+  <!-- CSS Propio -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+
+
+  <nav id="header" class="navbar navbar-expand-md fixed-top navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        SmartReport
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#links" aria-controls="links"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="links" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/ingreso/"><i class="fas fa-child"></i> Nuevo Ingreso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="guardia.html">Guardia</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#contacto-modal">Contacto</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Hola, {{request.session.username}}
+              <span style="font-size: 17px; color: Dodgerblue;">
+                <i class="fas fa-smile "></i>
+              </span>
+            </a>
+          </li>
+
+
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+  </nav>
+
+
+  <div class="container" id="resumen">
+    <div class="row" id="resumen1">
+      <div class="col-4">
+        <div class="circulo">
+          <div class="alert alert-warning" role="alert">
+            IMAGENOLOGIA
+          </div>
+        </div>
+        <div class="circulo">
+          <div class="alert alert-warning" role="alert">
+            BLOCK QUIRURGICO
+          </div>
+        </div>
+        <div class="circulo">
+          <div class="alert alert-warning" role="alert">
+            LABORATORIO
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="formulario">
+          <input class="form-control" type="text" placeholder="Total de pacientes">
+          <input class="form-control" type="text" placeholder="Alto Riesgo de Caidas">
+          <input class="form-control" type="text" placeholder="Status de Alta: Altas">
+          <input class="form-control" type="text" placeholder="Status de Alta: Probables altas">
+          <input class="form-control" type="text" placeholder="Pacientes con mas de 25d de internacion">
+        </div>
+        <div class="FotoEnfermera">
+          <!--  <img src="../IMAGEN ENFERMERA.jpeg" class="rounded mx-auto d-block" alt="..."> -->
+        </div>
+
+      </div>
+      <div class="col-4">
+        <div class="circulo">
+          <div class="alert alert-warning" role="alert">
+            TRASLADOS EXTERNOS
+          </div>
+        </div>
+        <div class="circulo">
+          <div class="alert alert-warning" role="alert">
+            AISLAMIENTO
+          </div>
+        </div>
+        <div class="circulo">
+          <div class="alert alert-warning" role="alert">
+            AYUNOS
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          SmartReport
+        </div><!-- /.col -->
+        <div class="col-md-3">
+          <ul>
+            <li><a href="ingresoPte.html">Nuevo Ingreso</a></li>
+            <li><a href="guardia.html">Guardia</a></li>
+          </ul>
+        </div><!-- /.col -->
+        <div class="col-md-3">
+          <ul>
+            <li><a href="resumen.html">Resumen</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#contacto-modal">Contacto</a></li>
+          </ul>
+        </div><!-- /.col -->
+        <div class="col-md-3">
+          <p style="color:#DDD;">Copyright &copy; Smart Report</p>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+  </div><!-- /#footer -->
+
+
+
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- JS de Popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+
+  <!-- JS de Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <!-- JS de Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+</body>
+
+</html>
